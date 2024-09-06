@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prefeitura - Sobre</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="smartphone.css">
+    <style>
+        /* Estilo do Cabeçalho */
+        header {
+            background-color: #004d00;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: 60px; /* Ajuste a altura da logo conforme necessário */
+            margin-right: 10px;
+        }
+
+        .nome-prefeitura {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul#icone-menu {
+            display: none; /* Oculta ícones de menu para telas grandes */
+        }
+
+        nav ul.menu {
+            display: flex;
+        }
+
+        nav ul.menu li {
+            margin: 0 15px;
+        }
+
+        nav ul.menu li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        nav ul.menu li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilo da Seção Sobre */
+        #sobre {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        #sobre h2 {
+            font-size: 2.5em;
+            color: #004d00;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .conteudo {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .secao {
+            flex: 1 1 30%;
+            margin: 10px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .secao h3 {
+            font-size: 1.8em;
+            color: #004d00;
+            margin-bottom: 10px;
+        }
+
+        .secao p {
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        /* Estilo do Rodapé */
+        footer {
+            background-color: #004d00;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsividade para o menu */
+        @media (max-width: 768px) {
+            nav ul.menu {
+                display: none;
+            }
+
+            nav ul#icone-menu {
+                display: flex;
+                justify-content: center;
+                margin: 0;
+                padding: 0;
+            }
+
+            nav ul#icone-menu li {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo da Prefeitura" class="logo">
+                <div class="nome-prefeitura">Prefeitura de São Sebastião do Alto</div>
+            </div>
+            
+            <nav>
+                <ul id="icone-menu">
+                    <li id="menu"><ion-icon name="menu-outline"></ion-icon></li>
+                    <li id="menuX"><ion-icon name="close-outline"></ion-icon></li>
+                </ul>
+                <ul class="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="sobre">
+        <h2>Sobre a Prefeitura</h2>
+        <div class="conteudo">
+            <div class="secao">
+                <h3>História</h3>
+                <p>São Sebastião do Alto, fundado em 1891, é um município que tem visto um crescimento constante ao longo dos anos. Desde sua fundação, a cidade tem sido um ponto de desenvolvimento e inovação na região.</p>
+            </div>
+            <div class="secao">
+                <h3>Missão</h3>
+                <p>Nosso compromisso é promover a qualidade de vida dos cidadãos por meio de uma gestão pública eficiente e transparente. Trabalhamos para oferecer serviços de excelência, preservar o meio ambiente e fomentar o desenvolvimento sustentável da cidade.</p>
+            </div>
+            <div class="secao">
+                <h3>Visão</h3>
+                <p>Almejamos ser um exemplo de inovação e eficiência na administração pública, criando um ambiente propício para o crescimento econômico e social. Nosso objetivo é tornar São Sebastião do Alto uma cidade moderna, inclusiva e sustentável, com infraestrutura de qualidade e uma comunidade engajada.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Prefeitura - Todos os direitos reservados.</p>
+    </footer>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+</body>
+</html>

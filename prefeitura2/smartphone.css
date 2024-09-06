@@ -1,0 +1,45 @@
+/* Arquivo: smartphone.css */
+@media (max-width: 768px) {
+    .cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    #icone-menu {
+        display: block
+        ;
+        justify-content: flex-end;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fff;
+        width: 100%;
+    }
+
+    #menuX {
+        display: none;
+    }
+
+    #menu {
+        font-size: 24px;
+        cursor: pointer;
+        display: block;
+    }
+
+    #menuX {
+        font-size: 24px;
+        cursor: pointer;
+    }
+}
+

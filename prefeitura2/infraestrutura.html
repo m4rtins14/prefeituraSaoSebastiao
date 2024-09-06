@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviço de Infraestrutura</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilo do Carrossel */
+        .carousel {
+            width: 100%;
+            max-width: 1200px;
+            margin: 40px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            height: 60vh;
+            object-fit: cover;
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        .carousel-controls button {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            pointer-events: all;
+            transition: background-color 0.3s;
+            font-size: 20px;
+        }
+
+        .carousel-controls button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .carousel-indicators li {
+            width: 12px;
+            height: 12px;
+            background-color: rgba(0, 0, 0, 0.4);
+            margin: 0 5px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-indicators .active {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Estilo do Conteúdo Principal */
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            text-align: center; /* Centraliza o conteúdo */
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            color: #004d00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            color: #004d00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        ul {
+            padding-left: 0;
+            margin-bottom: 20px;
+            list-style-type: none; /* Remove as bolinhas da lista */
+            text-align: left;
+            display: inline-block; /* Mantém alinhado ao centro */
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+
+        /* Estilo do Rodapé */
+        footer {
+            background-color: #004d00;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilo para os links do menu */
+        nav ul.menu li a {
+            color: #004d00;
+            text-decoration: none;
+            padding: 8px 16px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul.menu li a:hover {
+            background-color: #e6f2e6;
+            color: #004d00;
+            border-radius: 5px;
+        }
+    </style>
+    <!-- VLibras -->
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+</head>
+<body>
+    <!-- VLibras Plugin -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo da Prefeitura" class="logo">
+                <div class="nome-prefeitura">Prefeitura de São Sebastião do Alto</div>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Carrossel de Imagens -->
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="infra1.jpg" alt="Infraestrutura 1">
+                <img src="infra2.jpg" alt="Infraestrutura 2">
+                <img src="infra3.jpg" alt="Infraestrutura 3">
+            </div>
+            <div class="carousel-controls">
+                <button id="prev">❮</button>
+                <button id="next">❯</button>
+            </div>
+        </div>
+
+        <!-- Indicadores do Carrossel -->
+        <ul class="carousel-indicators">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+        <h1>Infraestrutura</h1>
+        <p>Aqui você encontra informações sobre os projetos de desenvolvimento urbano...</p>
+
+        <!-- Projetos de Desenvolvimento Urbano -->
+        <section id="projetos">
+            <h2>Projetos de Desenvolvimento Urbano</h2>
+            <p>A Prefeitura de São Sebastião do Alto está implementando diversos projetos para melhorar a infraestrutura urbana e promover o desenvolvimento sustentável. Alguns dos projetos em andamento incluem:</p>
+            <ul>
+                <li><strong>Revitalização de Áreas Públicas:</strong> Melhoria de praças, parques e áreas de lazer com novos equipamentos e manutenção das estruturas existentes.</li>
+                <li><strong>Ampliação da Rede de Saneamento:</strong> Expansão das redes de água e esgoto para atender novos bairros e melhorar a qualidade de vida.</li>
+                <li><strong>Reforma de Vias Urbanas:</strong> Recuperação e pavimentação de ruas e avenidas para melhorar o tráfego e a segurança.</li>
+                <li><strong>Projeto de Mobilidade Urbana:</strong> Implementação de ciclovias e melhorias no transporte público para promover alternativas sustentáveis de mobilidade.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Prefeitura - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // JavaScript para controle do carrossel
+        const carouselImages = document.querySelector('.carousel-images');
+        const images = document.querySelectorAll('.carousel-images img');
+        const indicators = document.querySelectorAll('.carousel-indicators li');
+        const totalImages = images.length;
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            carouselImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+            indicators.forEach((indicator, index) => {
+                if (index === currentIndex) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+
+        document.getElementById('next').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalImages;
+            updateCarousel();
+        });
+
+        document.getElementById('prev').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+            updateCarousel();
+        });
+
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentIndex = index;
+                updateCarousel();
+            });
+        });
+
+        updateCarousel(); // Inicializa o carrossel
+    </script>
+</body>
+</html>

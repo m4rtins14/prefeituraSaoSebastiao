@@ -1,0 +1,865 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#hero {
+    position: relative;
+    height: 400px;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+#carrossel img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: none;
+    animation: fade 1s ease-in-out;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#servicos {
+    background-color: #e0e0e0;
+    padding: 40px;
+    text-align: center;
+}
+
+#servicos h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    width: 30%;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+footer {
+    background-color: #006635;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#galeria {
+    padding: 40px;
+    text-align: center;
+}
+
+.filtros {
+    margin-bottom: 20px;
+}
+
+.filtros button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #309e51;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.filtros button:hover {
+    background-color: #002244;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.foto {
+    margin: 10px;
+    width: 30%;
+}
+
+.foto img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.foto img:hover {
+    transform: scale(1.05);
+}
+
+#contato {
+    padding: 40px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input, form textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #07aa438e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #377b3370;
+}
+
+#mapa {
+    margin-top: 20px;
+    height: 300px;
+    background-color: #ddd;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+header {
+    background-color: #003366;
+    color: white;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Limita a largura do conteúdo */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 60px;
+    height: 60px; /* Ajuste a altura da logo conforme necessário */
+    border-radius: 50%;
+    background-color: white;
+    padding: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: 5px;
+}
+
+.nome-prefeitura {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+nav ul.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Espaço entre os itens do menu */
+}
+
+nav ul.menu li {
+    margin: 0;
+}
+
+nav ul.menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul.menu li a:hover {
+    text-decoration: underline;
+}
+
+header {
+    background-color: #003366;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: white;
+    padding: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: 10px; /* Margem menor entre logo e nome */
+}
+
+.nome-prefeitura {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-right: 20px; /* Espaço entre o nome e o menu */
+}
+
+nav ul.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px; /* Reduzido o espaço entre os itens do menu */
+}
+
+nav ul.menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul.menu li a:hover {
+    text-decoration: underline;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #2e8b57;
+    color: white;
+    padding: 10px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.nome-prefeitura {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+nav ul li a:hover {
+    background-color: #1f6b43;
+    border-radius: 5px;
+}
+
+#hero {
+    position: relative;
+    height: 400px;
+    background: url('foto1.jpg') no-repeat center center/cover;
+    text-align: center;
+    color: white;
+}
+
+#carrossel {
+    display: none;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#servicos {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 280px;
+    max-width: 32%;
+    text-align: left;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+    color: #2e8b57;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.card a {
+    text-decoration: none;
+    color: #2e8b57;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #2e8b57;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+#carrossel {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    height: 400px; /* Ajuste para garantir que o carrossel tenha altura fixa */
+}
+
+#carrossel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#carrossel img.active {
+    opacity: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+/* Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Cabeçalho */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2e8b57;;
+    padding: 15px 10px;
+    color: white;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.nome-prefeitura {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu li a:hover {
+    text-decoration: underline;
+}
+
+/* Seção de Saúde */
+#saude {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+#saude h2, #saude h3 {
+    color: #2e8b57;;
+}
+
+#saude p, #saude ul {
+    margin-bottom: 15px;
+}
+
+#saude ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+#vacinas table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#vacinas th, #vacinas td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+#vacinas th {
+    background-color: #2e8b57;;
+    color: white;
+}
+
+/* Rodapé */
+.footer-content {
+    background-color: #2e8b57;;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+.social-media a {
+    margin: 0 10px;
+}
+
+.social-media img {
+    width: 24px;
+    vertical-align: middle;
+}
+/* Estilos Globais */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #2e8b57;;
+    padding: 20px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.nome-prefeitura {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu a {
+    color: #2e8b57;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #2e8b57;
+}
+
+/* Estilos da Seção de Saúde */
+#saude {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+#saude h2 {
+    color: #2e8b57;;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#saude p {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+#sobre-sus, #vacinas {
+    margin-bottom: 40px;
+}
+
+#sobre-sus h3, #vacinas h3 {
+    font-size: 22px;
+    color: #2e8b57;;
+    margin-bottom: 15px;
+}
+
+#sobre-sus ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+#vacinas .tabela-vacinas {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#vacinas .tabela-vacinas th, 
+#vacinas .tabela-vacinas td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+#vacinas .tabela-vacinas th {
+    background-color: #f2f2f2;
+    color: #2e8b57;;
+}
+
+/* Estilos do Rodapé */
+footer {
+    background-color: #2e8b57;;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media a {
+    margin: 0 10px;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+
+.social-media img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* Estilos Globais */
+/* Já incluídos anteriormente */
+
+/* Estilos da Seção de Educação */
+#educacao {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+#educacao h2 {
+    color: #006400;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#educacao p {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+#doacao-livros, #projetos-educacionais {
+    margin-bottom: 40px;
+}
+
+#doacao-livros h3, #projetos-educacionais h3 {
+    font-size: 22px;
+    color: #006400;
+    margin-bottom: 15px;
+}
+
+#doacao-livros ul, #projetos-educacionais ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+/* Responsividade */
+/* Já incluída anteriormente */
+
+/* Estilos para o Carrossel */
+#carrossel {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+/* Estilo do Carrossel de Imagens */
+#carrossel-imagens {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#carrossel-imagens img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    animation: slide 15s infinite;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
+}
+
+
+.card {
+    flex: 1 1 30%;
+    margin: 10px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15pxrgb(14, 149, 77);
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card h3 a {
+    color:rgb(14, 149, 77);
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #ccc;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgb(14, 149, 77);
+}
+
+

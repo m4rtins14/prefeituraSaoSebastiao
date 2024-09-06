@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prefeitura - Página Inicial</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="smartphone.css">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <style>
+        header {
+            padding: 10px;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            max-height: 45px;
+            /* Altura máxima ajustada */
+            width: auto;
+            /* Largura ajustada automaticamente */
+            margin-right: 10px;
+            /* Espaçamento entre a logo e o texto */
+        }
+
+        .nome-prefeitura {
+            font-size: 1.2em;
+            /* Tamanho proporcional do texto */
+            color: #ffffff;
+            /* Cor do texto */
+            font-family: 'Roboto', sans-serif;
+            /* Fonte personalizada para o texto */
+            font-weight: 700;
+            /* Peso da fonte */
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            margin-right: 15px;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+            /* Menor margem para ficar mais próximo do menu */
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-control {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 5px;
+        }
+
+        .btn-default {
+            background-color: transparent;
+            /* Fundo transparente */
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .iconify {
+            font-size: 2em;
+            /* Tamanho aumentado para 2em */
+            color: #ffffff;
+            /* Cor do ícone */
+        }
+
+        .btn-default img {
+            width: 16px;
+            /* Tamanho proporcional do ícone */
+            height: 16px;
+        }
+
+        .btn-default:hover img {
+            filter: invert(35%) sepia(64%) saturate(6762%) hue-rotate(94deg) brightness(91%) contrast(103%);
+            /* Efeito de hover */
+        }
+
+        #hero {
+            position: relative;
+            overflow: hidden;
+            height: 400px;
+            /* Ajuste a altura conforme necessário */
+            margin-bottom: 40px;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            transition: opacity 1s ease-in-out;
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            text-align: center;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            /* Fundo escuro com transparência */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .carousel-text h1,
+        .carousel-text p {
+            margin: 0;
+        }
+
+        .carousel-text h1 {
+            font-size: 2.5em;
+        }
+
+        .carousel-text p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 10px;
+            margin-top: -22px;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            font-size: 2em;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .carousel-control:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .container-full-width-boxed {
+            display: flex;
+            flex-wrap: wrap;
+            /* Permite múltiplas linhas */
+            justify-content: center;
+            /* Centraliza o conteúdo horizontalmente */
+        }
+
+        .card-row {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            /* Distribui igualmente os cards */
+            margin-bottom: 20px;
+            /* Espaçamento entre as fileiras */
+        }
+
+        .sidebar-wrap {
+            flex: 0 1 30%;
+            /* Cada card ocupa cerca de 30% da largura da linha */
+            display: flex;
+            justify-content: center;
+        }
+
+        .sidebar-wrap img {
+            max-width: 100%;
+            /* Garante que a imagem não exceda a largura do card */
+            height: auto;
+            /* Mantém a proporção da imagem */
+            margin: 0 auto;
+            /* Centraliza as imagens dentro do card */
+        }
+
+        #servicos {
+            padding: 20px;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            /* Espaçamento aumentado entre os cards */
+            justify-content: center;
+            /* Centraliza os cards */
+        }
+
+        .card {
+            flex: 1 1 calc(33.33% - 30px);
+            /* Ajuste para considerar o novo espaçamento */
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: left;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            /* Limita a largura máxima dos cards para manter o layout consistente */
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .card-icon {
+            width: 50px;
+            /* Tamanho fixo para a imagem */
+            height: auto;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .psp-section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            /* Espaçamento inferior para separação do conteúdo */
+            padding: 10px 0;
+            max-width: 1000px;
+            /* Limita a largura para alinhar com os cards */
+            margin-left: auto;
+            /* Centraliza horizontalmente */
+            margin-right: auto;
+        }
+
+        .psp-section-title__main {
+            display: flex;
+            align-items: center;
+        }
+
+        .psp-section-title__text {
+            font-size: 1em;
+            /* Tamanho menor e mais delicado */
+            font-weight: 400;
+            /* Fonte menos espessa para uma aparência delicada */
+            color: #666;
+            /* Cor mais suave */
+            letter-spacing: 0.5px;
+            /* Menor espaçamento entre letras */
+            margin-right: 10px;
+            /* Espaço entre o texto e o divisor */
+        }
+
+        .psp-section-title__divider {
+            flex-grow: 1;
+            /* Faz com que o divisor se estenda até o final dos cards */
+            height: 1px;
+            /* Altura da linha divisória mais fina */
+            background-color: #ddd;
+            /* Cor do divisor */
+        }
+
+        .d-none {
+            display: none;
+        }
+
+        .d-sm-block {
+            display: block;
+        }
+
+        .footer {
+            background-color: #2e8b57;
+            /* Cor de fundo alterada para #2e8b57 */
+            color: #fff;
+            padding: 20px 0;
+            /* Reduzido o padding vertical */
+            text-align: center;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px;
+            /* Reduzido o padding */
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            padding: 10px;
+            /* Reduzido o padding interno das seções */
+            min-width: 200px;
+        }
+
+        .footer-section h2 {
+            font-size: 16px;
+            /* Tamanho do título ajustado */
+            margin-bottom: 5px;
+            /* Reduzido o espaço abaixo dos títulos */
+        }
+
+        .footer-section p {
+            font-size: 12px;
+            /* Tamanho do texto ajustado */
+            line-height: 1.4;
+            /* Menor altura da linha */
+        }
+
+        .footer-bottom {
+            background-color: #2e8b57;
+            padding: 5px 0;
+            /* Reduzido o padding */
+            margin-top: 10px;
+            /* Menor margem superior */
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            font-size: 12px;
+            /* Tamanho do texto ajustado */
+        }
+
+        #carousel {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 40px;
+            /* Espaçamento abaixo do carrossel */
+        }
+
+        .carousel-container {
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: 300px;
+            /* Altura do carrossel */
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            transition: opacity 1s ease-in-out;
+            display: none;
+            /* Inicialmente oculto */
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 2em;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 100;
+            user-select: none;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .carousel-control:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Define um tamanho fixo e consistente para todos os elementos <h3> */
+        h3 {
+            font-size: 1.5em;
+            /* Tamanho fixo para todas as tags <h3> */
+            line-height: 1.2;
+            /* Define uma altura de linha proporcional */
+            font-weight: bold;
+            /* Mantém o peso da fonte consistente */
+            margin: 10px 0;
+            /* Define uma margem uniforme em todos os títulos */
+            color: #333;
+            /* Cor de texto padrão */
+        }
+        #menu {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo da Prefeitura" class="logo">
+                <div class="nome-prefeitura">Prefeitura de São Sebastião do Alto</div>
+            </div>
+
+            <nav>
+                <ul id="icone-menu">
+                    <li id="menu">
+                        <!-- <ion-icon name="menu-outline"></ion-icon> -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                            <path fill="black" d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z" />
+                        </svg>
+                    </li>
+                    <li id="menuX"><ion-icon name="close-outline"></ion-icon></li>
+                </ul>
+                <ul class="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div id="top_search" class="search-container">
+
+                <div class="input-group">
+                    <input type="text" id="s" name="s" class="form-control" placeholder="Busca">
+                    <button class="btn-default" type="submit">
+                        <span class="iconify" data-icon="mdi:search"></span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <div id="carousel">
+        <div class="carousel-container">
+            <!-- Slide 1 -->
+            <div class="carousel-slide">
+                <img src="foto1.jpg" alt="Slide 1">
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-slide">
+                <img src="foto2.jpg" alt="Slide 2">
+            </div>
+            <!-- Slide 3 -->
+            <div class="carousel-slide">
+                <img src="foto3.jpg" alt="Slide 3">
+            </div>
+
+            <!-- Controles do Carrossel -->
+            <button class="carousel-control prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="carousel-control next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </div>
+
+
+
+    <section id="servicos">
+        <div class="lfr-layout-structure-item-t-tulo-de-se--o" style="">
+            <div id="fragment-025e1eb6-f663-2329-8e2a-708337818546">
+                <div class="psp-section-title">
+                    <div class="psp-section-title__main mr-5">
+                        <div class="psp-section-title__text text-6 font-weight-semi-bold">
+                            <div data-lfr-editable-id="text" data-lfr-editable-type="rich-text">
+                                Serviços em Destaque
+                            </div>
+                        </div>
+                    </div>
+                    <div class="psp-section-title__divider d-none d-sm-block"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cards">
+            <!-- Card 1 - Saúde -->
+            <div class="card">
+                <h3><a href="saude.html">Saúde</a></h3>
+                <p>Informações sobre saúde e bem-estar.</p>
+                <img src="saude.jpg" alt="Saúde" class="card-icon">
+            </div>
+            <!-- Card 2 - Educação -->
+            <div class="card">
+                <h3><a href="educacao.html">Educação</a></h3>
+                <p>Programas e iniciativas educacionais.</p>
+                <img src="educacao.jpg" alt="Educação" class="card-icon">
+            </div>
+
+            <!-- Card 3 - Infraestrutura -->
+            <div class="card">
+                <h3><a href="infraestrutura.html">Infraestrutura</a></h3>
+                <p>Projetos de desenvolvimento urbano.</p>
+                <img src="infraestrutura.png" alt="Infraestrutura" class="card-icon">
+            </div>
+
+            <!-- Card 4 - Lei Paulo Gustavo -->
+            <div class="card">
+                <a href="PauloGustavo.html">
+                    <h3>Lei Paulo Gustavo</h3>
+                </a>
+                <p>Informações sobre a Lei Paulo Gustavo.</p>
+                <img src="paulooo.png" alt="Lei Paulo Gustavo" class="card-icon">
+            </div>
+
+            <!-- Card 5 - Concursos Públicos -->
+            <div class="card">
+                <h3>Concursos Públicos</h3>
+                <p>Dados sobre concursos públicos disponíveis.</p>
+                <img src="publico.png" alt="Concursos Públicos" class="card-icon">
+            </div>
+
+            <!-- Card 6 - Atendimento ao Cidadão -->
+            <div class="card">
+                <h3>Atendimento ao Cidadão</h3>
+                <p>Serviços de atendimento ao cidadão.</p>
+                <img src="cidade.png" alt="Atendimento ao Cidadão" class="card-icon">
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos">
+        <div class="lfr-layout-structure-item-t-tulo-de-se--o" style="">
+            <div id="fragment-025e1eb6-f663-2329-8e2a-708337818546">
+                <div class="psp-section-title">
+                    <div class="psp-section-title__main mr-5">
+                        <div class="psp-section-title__text text-6 font-weight-semi-bold">
+                            <div data-lfr-editable-id="text" data-lfr-editable-type="rich-text">
+                                Servidor
+                            </div>
+                        </div>
+                    </div>
+                    <div class="psp-section-title__divider d-none d-sm-block"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cards">
+            <!-- Card 1 - Saúde -->
+            <div class="card">
+                <h3>Junta de serviço militar</h3>
+                <p>Informações sobre os serviços militares</p>
+                <img src="ServicosMilitares.png" alt="Saúde" class="card-icon">
+            </div>
+            <!-- Card 2 - Educação -->
+            <div class="card">
+                <h3>Ouvidoria</h3>
+                <p> Garantia da qualidade dos serviços públicos</p>
+                <img src="Ouvidoria.png" alt="Educação" class="card-icon">
+            </div>
+
+            <!-- Card 3 - Infraestrutura -->
+            <div class="card">
+                <h3>Alvara web</h3>
+                <p>Projetos de forma correta.</p>
+                <img src="Alvara.png" alt="Infraestrutura" class="card-icon">
+            </div>
+
+            <!-- Card 4 - Lei Paulo Gustavo -->
+            <div class="card">
+                <h3>Legislação on-line</h3>
+                <p>Conjunto de leis com valor jurídico.</p>
+                <img src="Legislacao.png" alt="Lei Paulo Gustavo" class="card-icon">
+            </div>
+
+            <!-- Card 5 - Concursos Públicos -->
+            <div class="card">
+                <h3>Processo seletivo</h3>
+                <p>Dados sobre concursos públicos disponíveis.</p>
+                <img src="ProcessoSeletivo.png" alt="Concursos Públicos" class="card-icon">
+            </div>
+
+            <!-- Card 6 - Atendimento ao Cidadão -->
+            <div class="card">
+                <h3>Emendas parlamentares</h3>
+                <p>Serviços de atendimento ao cidadão.</p>
+                <img src="EmendasParlamentares.png" alt="Atendimento ao Cidadão" class="card-icon">
+            </div>
+        </div>
+    </section>
+    <br>
+
+    <!-- Adicione o vídeo ao final dos cards -->
+    <section id="video-section">
+        <div class="psp-section-title">
+            <div class="psp-section-title__main mr-5">
+                <div class="psp-section-title__text text-6 font-weight-semi-bold">
+                    Vídeo Institucional
+                </div>
+            </div>
+            <div class="psp-section-title__divider d-none d-sm-block"></div>
+        </div>
+        <div class="video-container" style="text-align: center; padding: 20px;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/eQupDhtsIeo" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <br>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>Prefeitura de São Sebastião do Alto</h2>
+                <p>Endereço: Rua Julio Vieitas, Nº 88, Centro, São Sebastião do Alto – RJ, CEP 28550-000</p>
+                <p>Telefone: (22) 99924-5145</p>
+                <p>Horário de Funcionamento: Segunda a Sexta, 8h às 15h para atendimento ao público e de 15h às 17h para
+                    serviços internos.</p>
+            </div>
+            <div class="footer-section social-media">
+                <h2>Siga-nos</h2>
+                <div class="social-icons">
+                    <a href="www.facebook.com.br"><span class="iconify" data-icon="mdi:facebook"></span></a>
+                    <a href="www.x.com.br"><span class="iconify" data-icon="mdi:twitter"></span></a>
+                    <a href="www.instagram.com.br"><span class="iconify" data-icon="mdi:instagram"></span></a>
+                </div>
+            </div>
+            <div class="footer-section newsletter">
+                <h2>Receba Nossas Notícias</h2>
+                <form>
+                    <input type="email" placeholder="Seu e-mail" required>
+                    <button type="submit">Inscrever-se</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Prefeitura de São Sebastião do Alto. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+
+
+
+    </div><!-- #container -->
+
+    <a href="#" id="back-to-top" title="Back to top"><i class="fa fa-chevron-up"></i></a>
+    <link rel='stylesheet' id='dashicons-css'
+        href='https://ssalto.rj.gov.br/wp-includes/css/dashicons.min.css?ver=4418d1ade652d7a420025a3783b124c7'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='gllr_stylesheet-css'
+        href='https://ssalto.rj.gov.br/wp-content/plugins/gallery-plugin/css/frontend_style.css?ver=4.7.1'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='gllr_fancybox_stylesheet-css'
+        href='https://ssalto.rj.gov.br/wp-content/plugins/gallery-plugin/fancybox/jquery.fancybox.min.css?ver=4.7.1'
+        type='text/css' media='all' />
+    <script type="text/javascript" id="dlm-xhr-js-extra">
+        /* <![CDATA[ */
+        var dlmXHRtranslations = { "error": "An error occurred while trying to download the file. Please try again.", "not_found": "Download n\u00e3o existe.", "no_file_path": "No file path defined.", "no_file_paths": "N\u00e3o h\u00e1 caminhos de arquivo definidos.", "filetype": "Download is not allowed for this file type.", "file_access_denied": "Access denied to this file.", "access_denied": "Access denied. You do not have permission to download this file.", "security_error": "Something is wrong with the file path.", "file_not_found": "Arquivo n\u00e3o encontrado." };
+        /* ]]> */
+    </script>
+    <script type="text/javascript" id="dlm-xhr-js-before">
+        /* <![CDATA[ */
+        const dlmXHR = { "xhr_links": { "class": ["download-link", "download-button"] }, "prevent_duplicates": true, "ajaxUrl": "https:\/\/ssalto.rj.gov.br\/wp-admin\/admin-ajax.php" }; dlmXHRinstance = {}; const dlmXHRGlobalLinks = "https://ssalto.rj.gov.br/download/"; const dlmNonXHRGlobalLinks = []; dlmXHRgif = "https://ssalto.rj.gov.br/wp-includes/images/spinner.gif"; const dlmXHRProgress = "1"
+        /* ]]> */
+    </script>
+    <script type="text/javascript"
+        src="https://ssalto.rj.gov.br/wp-content/plugins/download-monitor/assets/js/dlm-xhr.min.js?ver=4.9.14"
+        id="dlm-xhr-js"></script>
+    <script defer type="text/javascript"
+        src="https://ssalto.rj.gov.br/wp-includes/js/comment-reply.min.js?ver=4418d1ade652d7a420025a3783b124c7"
+        id="comment-reply-js" async="async" data-wp-strategy="async"></script>
+    <script type="text/javascript" id="pojo-a11y-js-extra">
+        /* <![CDATA[ */
+        var PojoA11yOptions = { "focusable": "", "remove_link_target": "", "add_role_links": "1", "enable_save": "1", "save_expiration": "1" };
+        /* ]]> */
+    </script>
+    <script type="text/javascript"
+        src="https://ssalto.rj.gov.br/wp-content/plugins/pojo-accessibility/assets/js/app.min.js?ver=1.0.0"
+        id="pojo-a11y-js"></script>
+    <script type="text/javascript" id="gllr_enable_lightbox_ios-js-after">
+        /* <![CDATA[ */
+        (function ($) {
+            $(document).ready(function () {
+                $('#fancybox-overlay').css({
+                    'width': $(document).width()
+                });
+            });
+        })(jQuery);
+
+        /* ]]> */
+    </script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+    
+        // Função para mostrar o slide
+        function showSlide(index) {
+            slides.forEach((slide) => {
+                slide.style.display = 'none'; // Oculta todos os slides
+            });
+    
+            slides[index].style.display = 'block'; // Mostra o slide atual
+        }
+    
+        // Função para mudar o slide
+        function changeSlide(n) {
+            currentSlide += n;
+    
+            // Volta ao primeiro slide se ultrapassar o último
+            if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            }
+    
+            // Volta ao último slide se for para trás no primeiro
+            if (currentSlide < 0) {
+                currentSlide = slides.length - 1;
+            }
+    
+            showSlide(currentSlide);
+        }
+    
+        // Inicializa o carrossel mostrando o primeiro slide
+        showSlide(currentSlide);
+    
+        // Função para passar automaticamente os slides
+        setInterval(() => {
+            changeSlide(1); // Muda para o próximo slide a cada 3 segundos
+        }, 3000); // 3000 milissegundos = 3 segundos
+    </script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    
+</body>
+
+</html>
